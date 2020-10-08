@@ -44,38 +44,33 @@ import tkinter as tk
 window = tk.Tk()
 
 
-frm_form = tk.Frame(relief=tk.SUNKEN, bg="black")
+frm_form = tk.Frame(relief=tk.SUNKEN)
 frm_form.pack(fill=tk.BOTH)
 frm_form.columnconfigure(1, weight=1, minsize=250)
 
+label = [
+    "First Name:",
+    "Last Name:",
+    "Address 1:",
+    "Address 2:",
+    "City:",
+    "State/Province:",
+    "Postal Code:",
+    "Country:"
+]
 
-# window.rowconfigure(, minsize=100)
+for i, label_text in enumerate(label):
+    label_loop = tk.Label(master=frm_form, text=label_text)
+    label_loop.grid(row=i, column=0)
 
-label1 = tk.Label(master=frm_form, text="First Name:")
-label2 = tk.Label(master=frm_form, text="Address 1:")
-label3 = tk.Label(master=frm_form, text="Address 2:")
-label4 = tk.Label(master=frm_form, text="City:")
-label5 = tk.Label(master=frm_form, text="State/Province:")
-label6 = tk.Label(master=frm_form, text="Postal Code:")
-label7 = tk.Label(master=frm_form, text="Last Name:")
-label8 = tk.Label(master=frm_form, text="Country:")
-
-rat = [label1, label2, label3, label4, label5, label6, label7, label8]
-
-for j in range(7):
-    rat[j].grid(row=j, column=0, sticky="n")
-
-
-for i in range(7):
     ent = tk.Entry(master=frm_form)
     ent.grid(row=i, column=1, sticky="we")
 
-
-frm_footer = tk.Frame(relief=tk.RAISED)
-frm_footer.pack()
+frm_footer = tk.Frame(relief=tk.RAISED,  bg="black")
+frm_footer.pack(fill=tk.X, ipadx=5, ipady=5)
 
 btn_clear = tk.Button(master=frm_footer, text="Clear")
-btn_clear.grid()
+btn_clear.pack(side=tk.RIGHT)
 
 window.mainloop()
 
