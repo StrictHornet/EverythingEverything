@@ -1,0 +1,6 @@
+C:\Users\Ehi\source\repos\C-Sharp Task 1\C-Sharp Task 1\bin\Debug\C-Sharp Task 1.exe.config
+C:\Users\Ehi\source\repos\C-Sharp Task 1\C-Sharp Task 1\bin\Debug\C-Sharp Task 1.exe
+C:\Users\Ehi\source\repos\C-Sharp Task 1\C-Sharp Task 1\bin\Debug\C-Sharp Task 1.pdb
+C:\Users\Ehi\source\repos\C-Sharp Task 1\C-Sharp Task 1\obj\Debug\C-Sharp Task 1.csprojAssemblyReference.cache
+C:\Users\Ehi\source\repos\C-Sharp Task 1\C-Sharp Task 1\obj\Debug\C-Sharp Task 1.exe
+C:\Users\Ehi\source\repos\C-Sharp Task 1\C-Sharp Task 1\obj\Debug\C-Sharp Task 1.pdb
