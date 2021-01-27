@@ -19,9 +19,7 @@ else:
     while(back>(p+1)):
         back -= 2
         bcount += 1
-if fcount < bcount:
-    minFlips = fcount
-else:
-    minFlips = bcount
+
+minFlips = fcount if fcount < bcount else bcount
 
 print(minFlips)
