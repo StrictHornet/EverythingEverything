@@ -9,7 +9,6 @@ for alp in "Alphabet":
     x = i * 2.4
     if x>1 and x%2 == 0:
         continue
-    print(f"Altitude is {alp}{x}")
     i+=1
 
 
