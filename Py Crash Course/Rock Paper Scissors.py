@@ -4,12 +4,12 @@ def play_RPS():
     user = input("Pick between Rock 'r', Paper 'p', and Scissors 's': ")
     computer =  random.choice('rps')
 
-    result = player_position(user, computer)
+    player_win = player_position(user, computer)
 
     if user == computer:
         return "It's a Tie"
     
-    if result:
+    if player_win:
         return "You won"
     
     return "Computer won"
