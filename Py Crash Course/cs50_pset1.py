@@ -1,5 +1,20 @@
-visa = 5399412275621212
-arr = [str(x) for x in str(visa)]
+def UserInput():
+    try:
+        visa = 0
+        while True:
+            visa = int(input("What is your card number: "))
+            if(type(visa) == int and visa > 0):
+                print(visa)
+                return visa
+    except:
+        print("Input a number!")
+        return UserInput()
+        
+card_no = 0
+card_no = UserInput()
+print(card_no)
+
+arr = [str(x) for x in str(card_no)]
 i = len(arr) - 1
 index = i - 1
 check_sum = []
