@@ -1,3 +1,5 @@
+import matplotlib as plt
+
 def UserInput():
     try:
         visa = 0
