@@ -1,7 +1,7 @@
 # IMPORTING THE LIBRARIES
 import numpy as np
 import matplotlib.pyplot as plt
-import pandas as pd
+import pandas as pd #IMPORT PANDAS MODULE
 
 
 # IMPORTING THE DATASET
