@@ -13,3 +13,6 @@ function reverseString(s) {
     }
     console.log(s);
 }
+
+//10-03-2021
+//Multiple Linear regressor on google colabs
