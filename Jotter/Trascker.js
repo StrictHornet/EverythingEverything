@@ -34,3 +34,18 @@ function isPositive(a) {
         throw new Error("Negative Error")
     }
 }
+
+
+/*
+ * Complete the Rectangle function
+ */
+function Rectangle(a, b) {
+    var Quad = {
+        length : a,
+        width : b,
+        perimeter : 2 * (a+b), 
+        area : a * b
+    };
+    
+    return Quad
+}
