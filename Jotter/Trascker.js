@@ -111,3 +111,26 @@ class Square extends Rectangle {
         super.area();
     }
 }
+
+/*
+Convert image to grayscale
+void grayscale(int height, int width, RGBTRIPLE image[height][width])
+{
+    int average;
+    for(int i = 0; i < height; i++){
+        for(int j = 0; j < width; j++){
+            average = (int) round((image[i][j].rgbtBlue + image[i][j].rgbtGreen + image[i][j].rgbtRed) / 3);
+            image[i][j].rgbtBlue = average;
+            image[i][j].rgbtGreen = average;
+            image[i][j].rgbtRed = average;
+            
+            printf("%u", image[i][j].rgbtBlue);
+            printf("|||");
+            printf("%x", image[i][j].rgbtRed);
+            printf(".\n");
+        }
+    }
+    return;
+}
+*/
+
