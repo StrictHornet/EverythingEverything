@@ -156,3 +156,34 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 //     }
 //     return;
 // }
+
+// Convert image to sepia 2,0
+// void sepia(int height, int width, RGBTRIPLE image[height][width])
+// {
+
+//     RGBTRIPLE temp[height][len];
+//     for(int i = 0; i < height; i++){
+//         for(int j = 0; j < len; j++){
+//             temp[i][j] = image[i][j];
+//         }
+
+
+//     for(int i = 0; i < height; i++){
+//         for(int j = 0; j < width; j++){
+//             image[i][j].rgbtBlue = (int) round((0.131 * temp[i][j].rgbtBlue) + (0.534 * temp[i][j].rgbtGreen) + (0.272 * temp[i][j].rgbtRed));
+//             image[i][j].rgbtGreen = (int) round((0.168 * temp[i][j].rgbtBlue) + (0.686 * temp[i][j].rgbtGreen) + (0.349 * temp[i][j].rgbtRed));
+//             image[i][j].rgbtRed = (int) round((0.189 * temp[i][j].rgbtBlue) + (0.769 * temp[i][j].rgbtGreen) + (0.393 * temp[i][j].rgbtRed));
+            
+//             if(image[i][j].rgbtBlue > 255){
+//                 image[i][j].rgbtBlue = 255;
+//             }
+//             if(image[i][j].rgbtGreen > 255){
+//                 image[i][j].rgbtGreen = 255;
+//             }
+//             if(image[i][j].rgbtRed > 255){
+//                 image[i][j].rgbtRed = 255;
+//             }
+//         }
+//     }
+//     return;
+// }
