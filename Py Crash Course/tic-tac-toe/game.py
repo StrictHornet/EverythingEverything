@@ -19,4 +19,4 @@ class TicTacToe:
 test = TicTacToe()
 
 test.print_board()
-test.print_board_nums()
+TicTacToe.print_board_nums()
