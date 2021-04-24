@@ -187,3 +187,31 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 //     }
 //     return;
 // }
+// Unloads dictionary from memory, returning true if successful, else false
+// bool unload(void)
+// {
+//     // TODO
+//     for(int i = 0; i < 26; i++)
+//     {
+//         node *list = table[i];
+
+//         while(list!= NULL)
+//         {
+//             node *tmp = list;
+//             list = list->next;
+//             free(tmp);
+//         }
+
+//         //free(list);
+
+//         if(i == 25 && list == NULL)
+//         {
+//             printf("FRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR");
+//             return true;
+//         }
+//     }
+//     return false;
+// }
+//WHAT FREE DOES, WHAT IT FREES AND WHY FREE(LIST) DID/DOES NOTHING
+//SKETCH LINKED LIST TO FIND LEAK\
+
