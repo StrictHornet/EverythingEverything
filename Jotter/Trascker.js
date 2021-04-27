@@ -215,3 +215,34 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 //WHAT FREE DOES, WHAT IT FREES AND WHY FREE(LIST) DID/DOES NOTHING
 //SKETCH LINKED LIST TO FIND LEAK\
 
+// //cs50 lab6
+//     # TODO: Read teams into memory from file
+//     teams = []
+
+//     with open(sys.argv[1], "r") as file:
+//         teams_dict = csv.DictReader(f)
+//         for t in teams_dict:
+//             team = {"team" : t["team"], "rating" : int(t["rating"])}
+//             teams.append(team)
+
+//     counts = {}
+//     # TODO: Simulate N tournaments and keep track of win counts
+//     for i in range(N):
+//         winner = simulate_tournament(teams)
+//         #print(winner)
+//         if winner in counts:
+//             #add 1
+//             counts[winner] = counts[winner] + 1
+//         else:
+//             counts[winner] = 1
+
+
+
+// def simulate_tournament(teams):
+//     """Simulate a tournament. Return name of winning team."""
+//     # TODO
+//     rounds = int(math.sqrt(len(teams)))
+//     for i in range(rounds):
+//         teams = simulate_round(teams)
+
+//     return teams[0]["team"]
