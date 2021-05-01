@@ -246,3 +246,91 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 //         teams = simulate_round(teams)
 
 //     return teams[0]["team"]
+
+// DNA.PY
+// import sys
+// import csv
+
+// # Function to find STR's
+// def StrFinder(sequence, str_types):
+//     sequence_length = len(sequence)
+//     str_finder_found = {}
+//     for str_type in str_types:
+//         str_finder_found[str_type] = 0
+//         i = 0
+//         length_str_type = len(str_type)
+
+//         # Loop sequence to find STR
+//         while i < sequence_length:
+//             if sequence[i: i+length_str_type] == str_type:
+//                 count = 0
+//                 while sequence[i: i+length_str_type] == str_type:
+//                     count += 1
+//                     i += length_str_type
+//                 if count > str_finder_found[str_type]:
+//                     str_finder_found[str_type] = count
+//             else:
+//                 i += 1
+
+//     #print(str_finder_found)
+//     return str_finder_found
+
+// # Defining Variables
+// str_counts = []
+// sequence = ""
+// str_types = []
+// found = False
+
+// # Check argument length
+// if len(sys.argv) != 3:
+//     print("Incorrect amount of arguments")
+//     sys.exit(1)
+
+// # Import CSV and TXT
+// with open(sys.argv[1], "r") as str_counts_csv:
+//     reader = csv.DictReader(str_counts_csv)
+
+//     for row in reader:
+//         str_counts.append(row)
+
+// with open(sys.argv[2], "r") as sequence_txt:
+//     for line in sequence_txt:
+//         sequence = line
+
+// # Get Str's to be looked for
+// str_types_count = len(str_counts[0])
+// for str_type in [*str_counts[0].keys()]:
+//     if str_type != "name":
+//         str_types.append(str_type)
+//     #print(str_types)
+        
+// # Find Str's in sequence
+// str_found = StrFinder(sequence, str_types)
+// #print(str_found)
+
+// # Compare STR FOUND WITH CSV
+// for str_count in str_counts:
+//     for str_type in str_types:
+//         #print(str_count[str_type], str_found[str_type])
+//         if int(str_count[str_type]) == int(str_found[str_type]):
+//             found = True
+//         else:
+//             found = False
+//     if found == True:
+//         print(str_count["name"])
+//         break
+    
+// if found == False:
+//     print("No match")
+        
+
+// ##################################################################################################################
+// # for str_count in str_counts:
+// #     print(str_count["name"], str_count["TATC"])
+// #print(sequence, end ="")
+// #print(str_types)
+
+
+
+
+
