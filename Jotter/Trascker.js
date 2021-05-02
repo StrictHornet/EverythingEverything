@@ -310,18 +310,19 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 
 // # Compare STR FOUND WITH CSV
 // for str_count in str_counts:
+//     found = []
 //     for str_type in str_types:
 //         #print(str_count[str_type], str_found[str_type])
 //         if int(str_count[str_type]) == int(str_found[str_type]):
-//             found = True
+//             found.append(True)
 //         else:
-//             found = False
-//     if found == True:
+//             found.append(False)
+//     if False not in found:
 //         print(str_count["name"])
 //         break
-    
-// if found == False:
-//     print("No match")
+
+// if False in found:
+//     print(str_count["name"])
         
 
 // ##################################################################################################################
@@ -329,6 +330,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 // #     print(str_count["name"], str_count["TATC"])
 // #print(sequence, end ="")
 // #print(str_types)
+//check50 cs50/problems/2021/x/dna
 
 
 
