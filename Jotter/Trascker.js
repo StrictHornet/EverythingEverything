@@ -344,3 +344,21 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 // SELECT name FROM songs
 // ORDER BY tempo;
 // SELECT name FROM songs;
+
+
+// -- See Courthouse Reports
+// SELECT activity, license_plate, hour FROM courthouse_security_logs
+// WHERE year = 2020 AND month = 7 AND day = 28 AND hour =10
+// AND minute < 30;
+
+// -- Plates that left
+// -- exit | 5P2BI95 | 10
+// -- exit | 94KL13X | 10
+// -- exit | 6P58WS2 | 10
+// -- exit | 4328GD8 | 10
+// -- exit | G412CB7 | 10
+// -- exit | L93JTIZ | 10CS50
+// -- exit | 322W7JE | 10
+// -- exit | 0NTHK55 | 10
+
+// -- See Flight
