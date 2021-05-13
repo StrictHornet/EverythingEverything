@@ -333,23 +333,71 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 //check50 cs50/problems/2021/x/dna
 
 // LAB 7 SQL
-// SELECT name FROM songs WHERE name LIKE "%feat%";
-// SELECT AVG(energy) FROM songs WHERE artist_id IN(SELECT id FROM artists WHERE name = "Drake");
-// SELECT name FROM songs WHERE artist_id IN(SELECT id FROM artists WHERE name = "Post Malone");
-// SELECT AVG(energy) FROM songs;
-// SELECT name FROM songs WHERE danceability > 0.75 AND energy > 0.75 AND valence > 0.75;
-// SELECT name FROM songs
-// ORDER BY duration_ms
-// DESC LIMIT 5;
-// SELECT name FROM songs
-// ORDER BY tempo;
-// SELECT name FROM songs;
+// -- Sometime within ten minutes of the theft, I saw the thief get into a car in the courthouse parking lot and drive away.
+// -- If you have security footage from the courthouse parking lot, you might want to look for cars that left the parking lot in that time frame. XXXXXXXXXX
+// -- I don't know the thief's name, but it was someone I recognized. Earlier this morning, before I arrived at the courthouse, I was walking
+// -- by the ATM on Fifer Street and saw the thief there withdrawing some money. XXXXXXXXXXXXXX
+// -- As the thief was leaving the courthouse, they called someone who talked to them for less than a minute. In the call, I heard the thief
+// -- say that they were planning to take the earliest flight out of Fiftyville tomorrow. The thief then asked the person on the other end of the phone to purchase the flight ticket.
 
+// -- Danielle  Ernest
+
+// -- Keep a log of any SQL queries you execute as you solve the mystery.
+
+// -- We have 2 suspects. Let's check phone calls of suspects for calls on the 28th after 10 that were less than a minute.
+
+// -- Get city Ernest Ran to
+// SELECT city FROM airports WHERE airports.id = 4;
+
+// -- Get name of person Ernest called
+// SELECT name FROM people WHERE phone_number LIKE "(375) 555-8161";
+
+// -- Get suspect numbers
+// SELECT phone_number, name FROM people WHERE name IN("Danielle",  "Ernest");
+
+// -- List calls of 2 suspects
+// SELECT * FROM phone_calls WHERE caller IN (SELECT phone_number FROM people WHERE name IN("Danielle",  "Ernest")) AND year = 2020 AND month = 7 AND day = 28 AND duration < 60;
+
+// -- Find passengers in flight where they are a suspect
+// SELECT name FROM people WHERE passport_number IN(SELECT passport_number FROM passengers WHERE flight_id = 36) AND name IN ("Elizabeth",  "Danielle",  "Russell",  "Ernest");
+
+// -- See earliest flight out of airports and link to fiftyville
+// SELECT * FROM flights
+// JOIN airports ON airports.id = flights.origin_airport_id
+// WHERE flights.year = 2020 AND flights.month = 7 AND flights.day = 29 AND airports.city = "Fiftyville"
+// ORDER BY hour;
+
+// SELECT * FROM flights
+// WHERE year = 2020 AND month = 7 AND day = 29
+// ORDER BY hour;
+
+// -- Link ATM transactions to persons
+// SELECT name FROM people WHERE id IN(SELECT person_id FROM bank_accounts WHERE account_number IN(SELECT account_number FROM atm_transactions
+// WHERE year = 2020 AND month = 7 AND day = 28
+// AND atm_location = "Fifer Street" AND transaction_type = "withdraw"));
+
+// -- Link plates with persons
+// SELECT name FROM people where license_plate IN(SELECT license_plate FROM courthouse_security_logs
+// WHERE year = 2020 AND month = 7 AND day = 28 AND hour =10
+// AND minute < 30);
+
+// -- See Transcripts
+// SELECT transcript FROM interviews
+// WHERE year = 2020 AND month = 7 AND day = 28;
+
+// -- See Crime Scene Reports from the Year 2020
+// SELECT description, day, month FROM crime_scene_reports
+// WHERE year = 2020 AND month = 7 AND day = 28;
 
 // -- See Courthouse Reports
 // SELECT activity, license_plate, hour FROM courthouse_security_logs
 // WHERE year = 2020 AND month = 7 AND day = 28 AND hour =10
 // AND minute < 30;
+
+// -- See ATM withdrawals
+// SELECT account_number FROM atm_transactions
+// WHERE year = 2020 AND month = 7 AND day = 28
+// AND atm_location = "Fifer Street" AND transaction_type = "withdraw";
 
 // -- Plates that left
 // -- exit | 5P2BI95 | 10
@@ -357,7 +405,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 // -- exit | 6P58WS2 | 10
 // -- exit | 4328GD8 | 10
 // -- exit | G412CB7 | 10
-// -- exit | L93JTIZ | 10CS50
+// -- exit | L93JTIZ | 10
 // -- exit | 322W7JE | 10
 // -- exit | 0NTHK55 | 10
 
