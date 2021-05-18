@@ -409,4 +409,23 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 // -- exit | 322W7JE | 10
 // -- exit | 0NTHK55 | 10
 
-// -- See Flight
+// ----------------------------------------------------------------------------------------------------JAVASCRIPT ----FLIP BACKGROUND COLOR OF DIV ON CLICK
+// function Jumbotron(){
+//     jumbotron = document.querySelector(".jumbotron")
+//     jumbotron.style.backgroundColor = "Green"
+
+//     jumbotron.removeEventListener("click", Jumbotron)
+//     document.querySelector(".jumbotron").addEventListener("click", function FlipFunction(){
+//          document.querySelector(".jumbotron").style.backgroundColor = "Red"
+//          document.querySelector(".jumbotron").removeEventListener("click", FlipFunction)
+//          document.querySelector(".jumbotron").addEventListener("click", Jumbotron)
+//     })
+// }
+
+// function listen(){
+//     document.querySelector(".container").addEventListener("mouseover", changeColor)
+//     document.querySelector(".container").addEventListener("mouseover", povertyCapital)
+//     document.querySelector(".jumbotron").addEventListener("click", Jumbotron)
+// }
+
+// document.addEventListener("DOMContentLoaded", listen)
