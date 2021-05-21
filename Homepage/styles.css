@@ -1,0 +1,23 @@
+h1{
+    color: white;
+}
+
+.divs{
+    background-color: chartreuse;
+    border-top: 350px;
+}
+
+#spacebar
+{
+    border: 0px;
+}
+
+body{
+    margin: 0%;
+}
+
+.body{
+    padding: 15px;
+    margin: 0%;
+    background-color: chartreuse;
+}
