@@ -19,5 +19,21 @@ body{
 .body{
     padding: 15px;
     margin: 0%;
-    background-color: chartreuse;
+    background-color:chartreuse;
+}
+
+.body_ideas{
+    padding: 15px;
+    margin: 0%;
+    background-color:orangered;
+    height:10000px;
+}
+
+.center_forward{
+    text-align: center;
+    color: yellow;
+}
+
+.tabs{
+    align-items: center;
 }
