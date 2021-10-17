@@ -1,3 +1,23 @@
+/*
+VERSION THAT WORKED
+*/
+function rotLeft(a, d) {
+    // Write your code here
+    var A1 = a;
+    var A2 = [];
+    while(d>0){
+        var left = A1[0];
+        A1.splice(0, 1);
+        A2 = A1;
+        A2.push(left);
+        d -= 1;
+    }
+    
+    return A2;
+}
+/*
+VERSION 1
+*/
 function rotLeft(a, d) {
     // Write your code here
     var array1 = a;
@@ -30,7 +50,7 @@ function rotLeft(a, d) {
     var A2 = [];
     var left = A1[0];
     var i = 1;
-    A1.shift();
+    A1.splice(0, 1);
     A2 = A1;
     A2.push(left);
     rotations -= 1;
