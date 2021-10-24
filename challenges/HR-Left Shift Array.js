@@ -51,6 +51,7 @@ function rotLeft(a, d) {
     var left = A1[0];
     var i = 1;
     A1.splice(0, 1);
+    //A1.shift(0, 1);
     A2 = A1;
     A2.push(left);
     rotations -= 1;
