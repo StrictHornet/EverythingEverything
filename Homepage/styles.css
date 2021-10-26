@@ -37,3 +37,7 @@ body{
 .tabs{
     align-items: center;
 }
+
+#right{
+    text-align: right;
+}
