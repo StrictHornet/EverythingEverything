@@ -41,3 +41,8 @@ body{
 #right{
     text-align: right;
 }
+
+#proimg{
+    width: auto;
+    height: 500px;
+}
