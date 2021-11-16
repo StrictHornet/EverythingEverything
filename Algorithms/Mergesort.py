@@ -30,7 +30,7 @@ def Merge(L, R):
             B.extend(L[i:])
             return B
             
-        if i >= len(L):
+        if i >= len(L): 
             B.extend(R[j:])
             return B
 
