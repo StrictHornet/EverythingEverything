@@ -27,12 +27,17 @@ function QuickSort(array){
     }
     if( len > 1){
         let q = Partition(array);
+        if(q==0){
+            q = q+1;
+        }
         console.log(q, array[q])
         let L = array.slice(0, q)
         console.log(L)
         let R = array.slice(q, len)
+        console.log(R)
         let LQS = QuickSort(L);
         let RQS = QuickSort(R);
+        console.log(LQS, RQS)
         return LQS.concat(RQS);
     }
 }
