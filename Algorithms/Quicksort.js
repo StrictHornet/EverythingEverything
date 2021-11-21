@@ -15,20 +15,27 @@ function Partition(array){
     temp = array[i+1];
     array[i+1] = array[len]
     array[len] = temp;
-
+    console.log(array)
     return i+1;
 }
 
 function QuickSort(array){
+    //console.log(array)
     len = array.length
+    if(len < 2){
+        return array;
+    }
     if( len > 1){
         let q = Partition(array);
-        let L = QuickSort(array.slice(0, q));
-        let R = QuickSort(array.slice(q, len));
-        let newArray = L.concat(R)
-        return newArray;
+        console.log(q, array[q])
+        let L = array.slice(0, q)
+        console.log(L)
+        let R = array.slice(q, len)
+        let LQS = QuickSort(L);
+        let RQS = QuickSort(R);
+        return LQS.concat(RQS);
     }
 }
 
-let array = [7, 4, 2, 1, 6, 8, 10, 15, 8, 3, 5]
-print(QuickSort(array))
+let array = [7, 4, 2, 1, 6, 8, 10, 15, 3, 5]
+console.log(QuickSort(array))
