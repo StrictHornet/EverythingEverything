@@ -1,16 +1,20 @@
+#-->import libraries used in solution
 import numpy as np
 import pandas as pd
 import matplotlib as pt #for . pyplot
-#from sklearn.impute import SimpleImputer
+#-->from sklearn.impute import SimpleImputer
 from sklearn.model_selection import train_test_split
+import math
 
 
 class Perceptron:
-
-    def __init__(self, learning_rate = 0.1, iters = 1000):
+    def __init__(self, learning_rate = 0.1, iters = 20):
       self.lr = learning_rate
       self.iters = iters
       self.activation = self.stepwise
+      self.activation_test = self.stepwise_test
+      self.max_linear_output = 0
+      self.min_linear_output = 0
 
     def fit(self, X, y):
       n_samples, n_features = X.shape
@@ -19,29 +23,59 @@ class Perceptron:
       self.weights = np.zeros(n_features)
       self.bias = 0
 
-      j = y[1]
-      print(j, "is represented as the binary digit 1, secondary comparison class is represented as 0")
-      y_ = np.array([1 if i == j else 0 for i in y])# == "class-1"
-      #print(y_)
+      j = "class-1"#y[1]; #Initialise j to an instance of a class in dataset to allow for class differentiation and representation
+      #print(j, "is represented as the binary digit 1, secondary comparison class is represented as 0")
+      y = np.array([1 if i == j else 0 for i in y])# == "class-1"
+      #print(y)
 
-      for _ in range(self.iters): #Number of iterations
-        for index, Xsample in enumerate(X):
-          linear_output = np.dot(Xsample, self.weights) + self.bias
-          y_predicted = self.activation(linear_output)
+      for iter in range(self.iters): #Number of iterations
+        for index, Xsample in enumerate(X): #index elements in X and access each sample in X
+          linear_output = np.dot(Xsample, self.weights) + self.bias #Calculate dot product
+          if linear_output > self.max_linear_output:
+            max_linear_output = linear_output
+          if linear_output < self.min_linear_output:
+            min_linear_output = linear_output
+          y_predicted = self.activation(linear_output) #classify sample
 
-          update = self.lr * (y_[index] - y_predicted)
+          update = self.lr * (y[index] - y_predicted) #(((y_[index] - y_predicted)**2)/2)
           self.weights += update * Xsample
           self.bias += update
-
+    
+    def sigmoid(self, X):
+      return 1 / (1 + math.exp(-X))
 
     def predict(self, X):
-      linear_output = np.dot(X, self.weights) + self.bias
-      y = self.activation(linear_output)
-      return y
+      #y = []
+      #y_e = []
+      a = np.array([])
+      for index, Xsample in enumerate(X):
+        linear_output = np.dot(Xsample, self.weights) + self.bias
+        if linear_output >= 0:
+          b = self.sigmoid(linear_output)
+          print(b)
+        if linear_output > self.max_linear_output:
+          max_linear_output = linear_output
+        if linear_output < self.min_linear_output:
+          min_linear_output = linear_output
+        prediction = self.activation_test(linear_output)
+        #print(prediction)
+        a = np.append(a, prediction)
+      return a
 
     def stepwise(self, x):
       return(np.where(x >= 0, 1, 0))
       #return 1 if x >= 0 else 0
+
+    def stepwise_test(self, x):
+      #trap min and max number
+      #print(x)
+      return(np.where(x >= 0, 1, 0))
+      #return 1 if x >= 0 else 0
+
+    def accuracy(y_true, y_pred):
+      #accuracy = np.sum(y_true == y_pred) / len(y_true)
+      accuracy = np.sum(y_true == y_pred) / len(y_true)
+      return accuracy
 
 
 #Import Data
