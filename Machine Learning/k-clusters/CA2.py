@@ -15,14 +15,13 @@ for i in animals_data:
         container.append(temp)
         #print(container)
 
-i = 1
-for ele in container:
+for ele in container: 
+    i = 0
     ele.pop(0)
     for va in ele:
         ele[i] = float(va)
-    i += 1
+        i += 1
 
-for i in container:
-    print(i, "\n")
-
-print(isinstance(container[0][1], float))
+to_np = np.asarray(container)
+means = np.mean(to_np, axis = 1)
+print(means)
