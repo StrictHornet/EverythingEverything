@@ -1,18 +1,22 @@
-class Solution:
-    def numRescueBoats(self, people: List[int], limit: int) -> int:
-        count = 0
-        i = -1
-        for person in people:
-            i+=1
-            if people[i] == limit:
-                i += 2
-                count += 1
-            elif(people[i] + people[i+1] <= limit):
-                count += 1
-            else:
-                count += 1
-                
-            if i == len(people) - 2:
-                break
-                
-        return count
+/**
+ * @param {number[]} people
+ * @param {number} limit
+ * @return {number}
+ */
+var numRescueBoats = function(people, limit) {
+    population = people.sort()
+        var i = 0
+        var j = people.length - 1
+        var res = 0
+        
+        while(i <= j){
+            res += 1
+            if(population[i] + population[j] <= limit){
+                i += 1
+            }
+            
+            j -= 1
+        }
+        
+        return res
+};
