@@ -360,8 +360,8 @@ veggies_file = np.genfromtxt(path_veggies, delimiter=" ")[:,1:]
 classes = [0, 1, 2, 3]  # Number labels to be included in data to determine data labels
 data_files = [animal_file, countries_file, fruits_file, veggies_file]   # Array of all data
 
-loop_limit = 2 #9         # Max number of k clusters
-max_iterations = 50 #500    # set number of iterations if k-means loop doesn't converge to avoid inf loop
+loop_limit = 9        # Max number of k clusters
+max_iterations = 100    # set number of iterations if k-means loop doesn't converge to avoid inf loop
 
 
 # =====  Q3) Kmeans Algorithm  =====
@@ -416,3 +416,5 @@ plot_graph(K_MeansResults, "K-Means Algorithm")
 plot_graph(K_MeansResults_l2, "K-Means Algorithm, L2 Normalized data")
 plot_graph(K_Median_Results, "K-Median Algorithm")
 plot_graph(K_Median_Results_l2, "K-Median algorithm with, L2 Normalized data")
+
+
