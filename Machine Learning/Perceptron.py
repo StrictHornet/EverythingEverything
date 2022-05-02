@@ -4,6 +4,10 @@ import pandas as pd
 import warnings
 
 
+#################################
+#PUT THIS FILE IN K-CLUSTERS DIR
+#################################
+
 ##############################
 #QUESTION 2 START
 ##############################
