@@ -11,7 +11,7 @@ def word_choice():
 
 def play_hangman():
     word = word_choice().upper()
-    lives = 5
+    lives = 10
     used_letters = set()
     word_letters = set(word)
     print(word_letters)

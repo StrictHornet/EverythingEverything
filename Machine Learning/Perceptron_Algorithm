@@ -1,0 +1,28 @@
+The training algorithm
+PerceptronTrain(Training data: D, MaxIter) 
+1:  for all ;  
+2:  
+3: for iter = 1 ... MaxIter do 
+4:     for all  do 
+5:          
+6:         if  then 
+7:             , for all  
+8:              
+9: return 
+wi = 0 i = 1,..., d
+b = 0
+(X, y) ∈D
+a = WT X + b
+y ⋅a ≤0
+wi = wi + y ⋅xi i = 1,..., d
+b = b + y
+b, w1, w2, ..., wd
+
+
+The test algorithm
+PerceptronTest( ) 
+1:  
+2: return 
+b, w1, w2, ..., wd, X
+a = WT X + b
+sign(a)
