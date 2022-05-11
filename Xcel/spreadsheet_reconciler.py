@@ -5,9 +5,7 @@ workbook = load_workbook(
     filename="C:/Users/Ehi/Google Drive/Work/VODACOM MAIN COPY OF SURVEY SPREADSHEET.xlsx")
 
 ############# TASKS ###################
-# PUTTING EVERYTHING IN ONE CONSTANT FILE
-# CREATE NEW FILE, COPY REC FILE, REC
-# GUI
+# EVERYTHING IN ONE FILE
 
 # For loop for search and cell assignment
 for ir in workbook["RecNew"].iter_rows(min_row=2, min_col=3):
