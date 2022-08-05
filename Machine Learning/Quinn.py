@@ -3,6 +3,7 @@
 SATURDAY CODE REVIEW WITH QUINN AT HOME
 
 import numpy as np
+import nltk 
 
 
 ROWS = 4
