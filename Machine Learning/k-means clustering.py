@@ -54,17 +54,3 @@ def kmeans(dataSet, k):
     # We can get the labels too by calling getLabels(dataSet, centroids)
     return centroids
 # Function: Should Stop
-
-'''
-Let's define three vectors:
-
-x = np.array([1, 2, 3, 4, 5]
-y = np.array([8, 8, 8, 8, 8])
-z = np.ones((5, 9))
-To calculate the distance between x and y we can use:
-
-np.sqrt(sum((x - y) ** 2))
-To calculate the distance between all the length 5 vectors in z and x we can use:
-
-np.sqrt(((z-x)**2).sum(axis=0))
-'''
