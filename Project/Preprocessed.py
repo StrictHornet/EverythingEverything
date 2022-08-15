@@ -6,6 +6,7 @@ import seaborn as sns
 import string
 import nltk
 import warnings 
+import gensim.downloader as glove_api
 from nltk.stem.porter import *
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
@@ -53,5 +54,14 @@ tokenized_tweet = tokenized_tweet.apply(lambda x: [stemmer.stem(i) for i in x]) 
 for i in range(len(tokenized_tweet)):
     tokenized_tweet[i] = ' '.join(tokenized_tweet[i])
 
-big_data['no-id'] = tokenized_tweet
-print(big_data.head(30))
+#print(tokenized_tweet.head(5))
+
+#big_data['no-id'] = tokenized_tweet
+#print(big_data.head(30))
+fspace = tokenized_tweet
+print(fspace.head(5))
+
+#### Word embedding
+#glove_model = glove_api.load('glove-twitter-25')
+#sample_glove_embedding = glove_model[fspace[2][0]]
+print(fspace[2])
