@@ -48,49 +48,22 @@ print('\n\nStemming\n\n')
 stemmer = PorterStemmer()
 
 tokenized_tweet = tokenized_tweet.apply(lambda x: [stemmer.stem(i) for i in x])
- # stemming
-print(tokenized_tweet.head())
-print("WD")
-print(tokenized_tweet[0][1])
+
+for i in range(len(tokenized_tweet)):
+    tokenized_tweet[i] = ' '.join(tokenized_tweet[i])
+
+train['tidy_tweet'] = tokenized_tweet
+
+from sklearn.feature_extraction.text import CountVectorizer
+bow_vectorizer = CountVectorizer(max_df=0.90, min_df=2, max_features=1000, stop_words='english')
+# bag-of-words feature matrix
+bow = bow_vectorizer.fit_transform(train['tidy_tweet'])
+#vocab = bow.get_feature_names()
+
+newb = bow.toarray()
+
+print(newb)
+print(newb.shape)
 
 
-#### Word embedding
-glove_model = glove_api.load('glove-twitter-25')
-sample_glove_embedding = glove_model[tokenized_tweet[3][1]]
-print(sample_glove_embedding)
-print(glove_model['love'])
-
-old_data = tokenized_tweet[0:5]
-old_data_label = train.iloc[0:5, 1:2]
-print(old_data)
-
-new_data = []
-for item in old_data:
-    sentence_no = []
-    for word in item:
-        try:
-            word_no = glove_model[word]
-        except KeyError:
-            continue
-        sentence_no.append(word_no)
-
-    new_data.append(sentence_no)
-
-#print(new_data)
-#data = pd.DataFrame(new_data)
-csvdata = np.asarray(new_data)
-print(csvdata)
-print(type(csvdata))
-#print(csvdata.shape)
-
-data = pd.DataFrame(csvdata)
-
-import csv
-  
-data.to_csv('data.csv', index=False)
-print(old_data_label)
-
-existing_label = np.concatenate([csvdata, old_data_label], axis = 1)
-print(existing_label)
-
-#Stopped at converting glove vectors to numpy array to allow it be formatted as input data for logistic regression model
+#designed to see output format of bow model
